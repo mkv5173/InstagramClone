@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,8 +27,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view =  LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
+        return new ViewHolder(view);
 
-        return null;
     }
 
     @Override
@@ -48,7 +47,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private ImageView ivImage;
         private TextView tvDescription;
 
-        public ViewHolder(View itemView){
+        public ViewHolder(@NonNull View itemView){
             super(itemView);
             tvUsername=itemView.findViewById(R.id.tvUsername);
             tvDescription=itemView.findViewById(R.id.tvDescription);
